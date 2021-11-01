@@ -25,10 +25,19 @@ export const listOfAwesome = [
 ];
 
 export default function Programmers() {
+  const [programers, setProgramers] =useState(listOfAwesome);
+  const [featuredProgrammers, setFeatured]= useState(null);
   // We'll have to use the state hook twice, as we need two slices of state.
   // The programmers list on the one hand, and the id of the featured programmer on the other.
 
   const getNameOfFeatured = () => {
+    let name = 'Featured';
+
+    programmers.forEach(programmer => {
+      if (programmer.id ===featuredProgrammer.id) {
+        name = programmer.name;
+      }
+    })
     // Leave this for last!
     // This is NOT an event handler but a helper function. See its usage inside the JSX.
     // It's going to utilize both slices of state to return the _name_ of the featured dev.
