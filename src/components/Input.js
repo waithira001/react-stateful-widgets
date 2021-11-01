@@ -34,9 +34,10 @@ STEP 6:
   We need to add an extra prop to the <input /> element like so: value={inputValue}
 */
 
-import React from 'react'; /* STEP 0 */
+import { useState } from "react"; /* STEP 0 */
 
 export default function Input() {
+  const [inputValue, setinputValue] = useState;
   /* STEP 1 */
 
   const changeInput = evt => {
@@ -44,9 +45,12 @@ export default function Input() {
     // Log out the synthetic event object 'evt' and see for yourself.
     const { value } = evt.target;
 
+    setinputValue(value)
+
     /* STEP 4 */
   };
   const reset = () => {
+    setinputValue("")
     /* STEP 5 */
   };
 
